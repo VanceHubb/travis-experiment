@@ -1,6 +1,9 @@
-echo "# travis-experiment" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin git@github.com:VanceHubb/travis-experiment.git
-git push -u origin master
+language: objective-c
+before_script:
+- ls -alt
+- pwd
+
+after_script:
+- echo 'after'
+after_success:
+- echo 'done'
