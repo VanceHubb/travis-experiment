@@ -1,8 +1,13 @@
 language: node
 before_script:
+- if [[ -d "cache" ]]; then mkdir cache && touch cache/1.txt; fi
+- cat cache/1.txt
 - ls -alt
 - pwd
+- echo 'wow' > cache/1.txt
 
+cache:
+- cache
 after_script:
 - echo 'after'
 after_success:
