@@ -1,13 +1,14 @@
 language: node
 before_script:
-- if [[ -d "cache" ]]; then echo 'exist'; else mkdir cache && touch cache/1.txt; fi
+- if [[ -d "cache" ]]; then echo 'exist'; else echo 'creating' && mkdir cache && touch cache/1.txt; fi
 - cat cache/1.txt
 - ls -alt
 - pwd
 - echo 'wow' > cache/1.txt
 
 cache:
-- cache
+   directories:
+    - cache
 after_script:
 - echo 'after'
 after_success:
